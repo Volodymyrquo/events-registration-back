@@ -2,11 +2,13 @@ import EventModel from '../models/Event.js'
 
 export const create = async (req,res)=>{
     try {
+
         const doc = new EventModel({
             title:req.body.title,
             description:req.body.description,
             eventDate:req.body.eventDate,
             organizer:req.body.organizer,
+            participant:req.body.participant
         });
 
         const post = await doc.save();
@@ -22,11 +24,32 @@ export const create = async (req,res)=>{
 
 export const getAll = async (req,res)=>{
     try {
-        const posts = await EventModel.find();
+        const posts = await EventModel.find().populate('participant').exec();
         res.json(posts)
     } catch (error) {
         console.log(error)
-        res.status(500).json({massage:"Cannot get posts"})
+        res.status(500).json({massage:"Cannot get events"})
     
     }
 }
+export const getOne = async (req,res)=>{
+    try {
+        const eventId = req.params.id
+        const doc = await EventModel.findOne({
+        _id:eventId,
+    }).populate('participant').exec()
+        if(!doc){
+            return res.status(404).json({
+                message:"Event not found"
+            })
+        }
+        res.json(doc);
+    
+    
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({massage:"Cannot get events"})
+    
+    }
+    }
+

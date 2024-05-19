@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 const EventSchema = mongoose.Schema({
     title:{
         type: String,
-        required:true
+        required:true,
+        unique:true
     },
     description:{
         type: String,
@@ -15,7 +16,13 @@ const EventSchema = mongoose.Schema({
     },
     organizer:{
         type: String,
-        required:true}
+        required:true},
+    participant:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Participant"
+        }
+    ]
     
 })
 
