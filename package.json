@@ -1,0 +1,23 @@
+{
+  "name": "events-registration-back",
+  "version": "1.0.0",
+  "description": "test task ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Volodymyr Basok",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.5",
+    "nodemon": "^3.1.0"
+  }
+}
