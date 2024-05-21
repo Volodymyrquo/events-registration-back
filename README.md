@@ -23,16 +23,6 @@ Install the project dependencies using npm:
 npm install
 ```
 
-**Set Up Environment Variables**
-
-Create a new file named `.env` in the root of your project and add the following content:
-
-```env
-PORT=4444
-MONGODB_URI=
-```
-Ask MONGODB_URI by email volodymyr.basok@gmail.com
-
 **Running the Project**
 
 ```bash
