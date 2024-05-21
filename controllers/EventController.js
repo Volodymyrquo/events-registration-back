@@ -21,11 +21,10 @@ export const create = async (req, res) => {
 
 export const getAll = async (req, res) => {
     try {
-        const page = parseInt(req.query.page);
-        const pageSize = parseInt(req.query.pageSize);
+        const { page, pageSize, sortBy, sortDirection } = req.query;
         const startIndex = (page - 1) * pageSize;
         const endIndex = page * pageSize;
-        const events = await EventModel.find().populate('participant').exec();
+        const events = await EventModel.find().sort({[sortBy]:sortDirection}).populate('participant').exec();
         const paginatedEvents = events.slice(startIndex, endIndex);
         const totalPages = Math.ceil(events.length / pageSize);
         res.json({ events: paginatedEvents, totalPages });
