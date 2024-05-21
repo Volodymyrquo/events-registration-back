@@ -11,8 +11,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/Volodymyrquo/events-registration-frontend.git
-cd events-registration-frontend
+git clone https://github.com/Volodymyrquo/events-registration-back.git
+cd events-registration-back
 ```
 
 **Installation**
@@ -28,14 +28,16 @@ npm install
 Create a new file named `.env` in the root of your project and add the following content:
 
 ```env
-REACT_APP_API_URL=http://localhost:4444
+PORT=4444
+MONGODB_URI=
 ```
+Ask MONGODB_URI by email volodymyr.basok@gmail.com
 
 **Running the Project**
 
 ```bash
-npm run start
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+Open [http://localhost:4444](http://localhost:4444) in your browser to view the project.
 
