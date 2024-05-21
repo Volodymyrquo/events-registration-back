@@ -12,9 +12,6 @@ const app = express()
 
 app.use(express.json());
 app.use(cors())
-app.get('/',(req,res)=>{
-    res.send("Hello World!")
-})
 
 app.get('/events',EventController.getAll)
 app.get('/events/:id',EventController.getOne)
