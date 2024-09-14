@@ -1,4 +1,6 @@
-Follow these steps to set up the project locally on your machine.
+### [Live Site](https://events-registration-back.onrender.com/events?page=1&pageSize=10&sortBy=title&sortDirection=asc)
+
+**Follow these steps to set up the project locally on your machine.**
 
 **Prerequisites**
 
