@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 import mongoose from 'mongoose';
-import { EventController, ParticipantController } from './controllers/index.js';
+import { EventController, ParticipantController } from '../controllers/index.js';
 
 mongoose
     .connect(process.env.MONGODB_URI)
